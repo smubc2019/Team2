@@ -38,9 +38,11 @@ app.get('/api/checklike', (req, res) => {
   console.log('/api/checklike');
  
   web3Provider.eth.getBlockNumber().then(blockNo=>{
-    if (blockNo % 10 == 4) {
-      console.log('WIN')
-      res.json({win: true});
+    if (blockNo % 10 == 0) {
+      //if(blockNo+randomNo() == blockNo) {
+        console.log('WIN')
+        res.json({win: true});
+      //}
     }
   });
 });
@@ -74,3 +76,8 @@ app.post('/api/spend', (req, res) => {
 const port = 8000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
+
+//Generate a random number between 0 to 9
+function randomNo() {
+  return Math.floor(Math.random() * 10);
+}
