@@ -68,6 +68,7 @@ contract BasicToken is ERC20Basic {
 
   mapping(address => uint256) balances;
 
+  uint256 maxSupply_ = 100000;
   uint256 totalSupply_;
   uint256 currentSupply_;
 
@@ -283,6 +284,7 @@ contract MintableToken is StandardToken, Ownable {
    * @return A boolean that indicates if the operation was successful.
    */
   function mint(address _to, uint256 _amount) onlyOwner canMint public returns (bool) {
+    require(totalSupply_.add(_amount) <= maxSupply_);
     totalSupply_ = totalSupply_.add(_amount);
     currentSupply_ = currentSupply_.add(_amount);
     balances[_to] = balances[_to].add(_amount);
@@ -336,10 +338,8 @@ contract LIKEToken is MintableToken, BurnableToken {
   string public constant name = "LIKE Token";
   string public constant symbol = "LIKE";
   uint8 public constant decimals = 18;
-  uint256 public INITIAL_SUPPLY = 100000;
 
   constructor() public {
-    mint(msg.sender, INITIAL_SUPPLY);
+    mint(msg.sender, maxSupply_);
   }
-
 }
