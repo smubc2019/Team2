@@ -6,6 +6,7 @@ const web3 = require('web3');
 const web3Provider = new web3('http://localhost:8545');
 const abi = JSON.parse(fs.readFileSync('./contracts/LIKEToken.abi').toString())
 
+//Change the addresses here according to your ganache
 const myContract = new web3Provider.eth.Contract(abi, '0xF2E8EB400bf8860840057c640Ebdfe14EDe22545');
 const ownAddr = '0x05F3F32D9Cc20241992e49E194B8b937a31322F7';
 const fromAddr = '0xCa41DA4E7F72eF19CE1803DCB5D8b2CB236ccB96';
