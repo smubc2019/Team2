@@ -39,10 +39,10 @@ app.get('/api/checklike', (req, res) => {
  
   web3Provider.eth.getBlockNumber().then(blockNo=>{
     if (blockNo % 10 == 0) {
-      //if(blockNo+randomNo() == blockNo) {
+      if( (blockNo+randomNo()) == blockNo ) {
         console.log('WIN')
         res.json({win: true});
-      //}
+      }
     }
   });
 });
