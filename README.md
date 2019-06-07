@@ -1,4 +1,4 @@
-# Team 2 (Elvin, Madhu, Thilak)
+# Team 2 (Elvin, Maduh, Thilak)
 
 # How to run
 # Install truffle
