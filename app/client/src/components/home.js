@@ -72,10 +72,7 @@ class Home extends Component {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        userAddr: '0xCa41DA4E7F72eF19CE1803DCB5D8b2CB236ccB96'
-      })
+      }
     })
     .then(res => res.json())
     .then(data => {
