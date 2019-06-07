@@ -1,4 +1,4 @@
-# Team2
+# Team 2 (Elvin, Maduh, Thilak)
 
 # How to run
 # Install truffle
@@ -18,6 +18,7 @@
 - npm run dev
 
 Contract, Account addresses can be found in ganache.
+
 In /app/server.js, contract and account addresses need to be changed to the ones found in your ganache client.
 
 
